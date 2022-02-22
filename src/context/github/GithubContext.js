@@ -1,5 +1,4 @@
 import { createContext, useReducer } from 'react';
-import { resolvePath } from 'react-router-dom';
 import githubReducer from './GithubReducer';
 
 const GithubContext = createContext()
