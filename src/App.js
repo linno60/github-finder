@@ -4,9 +4,11 @@ import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import User from './pages/User';
 import Alert from './components/layout/Alert';
 import {GithubProvider} from './context/github/GithubContext'
 import {AlertProvider} from './context/alert/AlertContext'
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />
+                <Route path='/user/:login' element={<User />} />
                 <Route path='/notfound' element={<NotFound />} />
                 <Route path='/*' element={<NotFound />} />
               </Routes>
