@@ -16,3 +16,30 @@ export const searchUsers = async (text) => {
 
     return items
 }
+
+// Get single user
+export const getUser = async (login) => {
+    const response = await fetch(`https://api.github.com/users/${login}`)
+
+    if(response.status === 404) {
+        window.loacation = '/notfound'
+    } else {
+        const data = await response.json()
+
+       return data
+    }        
+}
+
+// Get user repos
+export const getUserRepos = async (login) => {
+    const params = new URLSearchParams({
+        sort: 'created',
+        per_page: 10
+    })
+
+    const response = await fetch(`https://api.github.com/users/${login}/repos?${params}`)
+
+    const data = await response.json()
+
+    return data
+}
