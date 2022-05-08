@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 const github = axios.create({
-    baseURL: 'https://api.github.com'
+    baseURL: 'https://api.github.com',
+    headers: { Authorization: process.env.GITHUB_TOKEN },
 })
 
 // Get search results
